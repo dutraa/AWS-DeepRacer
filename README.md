@@ -20,6 +20,7 @@ The Track used was of **[Re-Invent2018](https://github.com/aws-samples/aws-deepr
 ## Try 1
 ### Reward Function
 ```python
+import math
 def straight_line_reward(current_reward, steering):
     # Positive reward if the car is in a straight line going fast
     if abs(steering) < 0.1:
@@ -33,7 +34,6 @@ def straight_line_reward(current_reward, steering):
         
     return current_reward
 def direction_reward(reward, waypoints, closest_waypoints, heading):
-    import math
     DIRECTION_THRESHOLD = 10
     next_point = waypoints[closest_waypoints[1]]
     prev_point = waypoints[closest_waypoints[0]]
@@ -55,7 +55,7 @@ def direction_reward(reward, waypoints, closest_waypoints, heading):
     
     return reward
     
-import math
+
 
 def reward_function(params):
     '''
@@ -90,6 +90,7 @@ def reward_function(params):
 ## Try 2
 ### Reward Function
 ```python
+import math
 def steering_reward(reward, steering, is_left_of_center, speed):
     # For hard turn:
     if steering < -25 and is_left_of_center == False and speed < 3 or steering > 25 and is_left_of_center == True and speed < 3:
@@ -110,7 +111,6 @@ def steering_reward(reward, steering, is_left_of_center, speed):
     return reward
     
 def direction_reward(reward, waypoints, closest_waypoints, heading):
-    import math
     next_point = waypoints[closest_waypoints[1]]
     prev_point = waypoints[closest_waypoints[0]]
 
@@ -183,6 +183,7 @@ def reward_function(params):
 ## Try 3
 ### Reward Function
 ```python
+import math
 def straight_line_reward(current_reward, steering):
     # Positive reward if the car is in a straight line going fast
     if abs(steering) < 0.1:
@@ -196,7 +197,6 @@ def straight_line_reward(current_reward, steering):
         
     return current_reward
 def direction_reward(reward, waypoints, closest_waypoints, heading):
-    import math
     DIRECTION_THRESHOLD = 10
     next_point = waypoints[closest_waypoints[1]]
     prev_point = waypoints[closest_waypoints[0]]
@@ -253,6 +253,7 @@ def reward_function(params):
 ## Try 4
 ### Reward Function
 ```python
+import math
 def steering_reward(reward, steering, is_left_of_center, speed):
     # For hard turn:
     if steering < -25 and is_left_of_center == False and speed < 3 or steering > 25 and is_left_of_center == True and speed < 3:
@@ -273,7 +274,6 @@ def steering_reward(reward, steering, is_left_of_center, speed):
     return reward
     
 def direction_reward(reward, waypoints, closest_waypoints, heading):
-    import math
     next_point = waypoints[closest_waypoints[1]]
     prev_point = waypoints[closest_waypoints[0]]
 
