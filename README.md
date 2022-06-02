@@ -346,6 +346,7 @@ def reward_function(params):
 ## Try 5
 ### Reward Function
 ```python
+import math
 def steering_reward(reward, steering, is_left_of_center, speed):
     # For hard turn:
     if (steering < -25 and is_left_of_center == False) or (steering > 25 and is_left_of_center == True):
@@ -366,7 +367,6 @@ def steering_reward(reward, steering, is_left_of_center, speed):
     return reward
     
 def direction_reward(reward, waypoints, closest_waypoints, heading):
-    import math
     next_point = waypoints[closest_waypoints[1]]
     prev_point = waypoints[closest_waypoints[0]]
 
